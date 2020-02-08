@@ -1,0 +1,48 @@
+#!/bin/bash
+syntax enable
+set nocompatible
+set autoindent
+set backspace=2
+set foldmethod=manual
+set hls
+set number
+set ruler
+set smartindent
+set smarttab
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set history=5000
+
+inoremap jj <ESC>
+set t_Co=256
+colorscheme deus
+set background=dark    " Setting dark mode "
+let g:deus_termcolors=256
+
+
+"___PlugIn Settings___"
+
+" Nerd commenter "
+filetype plugin on
+
+" airline "
+set laststatus=2
+let g:airline_theme='deus'
+
+" Nerd tree commands "
+map <C-f> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = '^'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd vimenter * NERDTree | wincmd w
+
+"___Vim Plugins___"
+call plug#begin('~/.vim/plugged')
+Plug 'ajmwagar/vim-deus'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
