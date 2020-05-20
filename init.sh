@@ -18,10 +18,6 @@ script_dir=`dirname $script`
 
 read -p "Please enter a name for this session: " serverName
 
-# Backups origional copy of bashrc and renames bash prompt to users input
-cp ${script_dir}/basic-configs/bashrc ${script_dir}/basic-configs/bashrc.bak
-sed -i 's/\[XXX\]/\['$serverName'\]/g' ${script_dir}/basic-configs/bashrc
-
 echo "=========================="
 echo "==== Install starting ===="
 echo "=========================="
