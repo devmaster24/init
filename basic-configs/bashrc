@@ -1,7 +1,0 @@
-# .bashrc
-
-# Required for making tmux work with color scheme
-export TERM=screen-256color
-
-alias taily='tail -f -n 5000'
-alias yeet='rm -rf'
