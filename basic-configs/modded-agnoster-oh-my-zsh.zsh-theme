@@ -8,6 +8,8 @@
 #
 # # README
 #
+# For easy listing of all avaiable colours: spectrum_ls
+#
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
 # Make sure you have a recent version: the code points that Powerline
@@ -100,9 +102,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment 255 black
+      prompt_segment 138 black
     else
-      prompt_segment '115' $CURRENT_FG
+      prompt_segment '107' $CURRENT_FG
     fi
 
     setopt promptsubst
@@ -122,7 +124,7 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment '138' $CURRENT_FG '%~'
+  prompt_segment '253' $CURRENT_FG '%~'
 }
 
 # Status:
